@@ -20,3 +20,7 @@ https://backend-laboration2-uppgift1-production.up.railway.app/api/workexperienc
 ## Tekniker
 
 HTML, CSS och JavaScript med Vite som utvecklingsmiljö.
+
+## Publicerad webbplats
+Webbplatsen publiceras automatiskt via **GitHub Pages**.
+[Länk till den publicerade webbplatsen](https://aliatwood.github.io/Typescript-laboration1/)
