@@ -2,17 +2,17 @@
 const API_URL = "https://backend-laboration2-uppgift1-production.up.railway.app/api/workexperience";
 
 // om containern på startsidan finns så körs getworkExperience funktionen
-if (document.querySelector(".container")) {
+if (document.querySelector(".container")){
   getWorkExperience();
 }
 // Om formuläret finns på add sidan så körs handleForm funktionen
-if (document.querySelector("#cvForm")) {
+if (document.querySelector("#cvForm")){
   handleForm();
 }
 
 // Hämtar alla arbetserfarenheter från API:et och visar dem
-async function getWorkExperience() {
-  try {
+async function getWorkExperience(){
+  try{
     const res = await fetch(API_URL);
     const data = await res.json();
 
@@ -20,7 +20,7 @@ async function getWorkExperience() {
     container.innerHTML = "";
 
     // Loopar igenom datan och skapar ett li-element för varje post
-    data.forEach(item => {
+    data.forEach(item =>{
       const li = document.createElement("li");
 
       li.innerHTML = `
@@ -32,7 +32,7 @@ async function getWorkExperience() {
       `;
 
        // Lägger till event listener för ta bort-knappen
-      li.querySelector("button").addEventListener("click", () => {
+      li.querySelector("button").addEventListener("click", () =>{
         deleteItem(item.id);
       });
 
@@ -45,23 +45,23 @@ async function getWorkExperience() {
 }
 
 // Formaterar datum till svenskt format
-function formatDate(dateString) {
+function formatDate(dateString){
   if (!dateString) return "";
   return new Date(dateString).toLocaleDateString("sv-SE");
 }
 
 // Hanterar formuläret för att lägga till en ny arbetserfarenhet
-function handleForm() {
+function handleForm(){
   const form = document.querySelector("#cvForm");
   const errorMsg = document.querySelector("#errorMsg");
 
-  form.addEventListener("submit", async (e) => {
+  form.addEventListener("submit", async (e) =>{
     e.preventDefault();
 
     const formData = new FormData(form);
 
     // Skapar ett objekt med formulärdatan
-    const newItem = {
+    const newItem ={
     companyName: formData.get("companyname"),
     jobTitle: formData.get("jobtitle"),
     location: formData.get("location"),
@@ -71,13 +71,13 @@ function handleForm() {
     };
 
     // Validering, kontrollerar att alla obligatoriska fält är fyllda
-    if (
+    if(
     !newItem.companyName ||
     !newItem.jobTitle ||
     !newItem.location ||
     !newItem.startDate ||
     !newItem.description
-    ) {
+    ){
     errorMsg.textContent = "Fyll i alla obligatoriska fält!";
     return;
     }
@@ -85,10 +85,10 @@ function handleForm() {
     errorMsg.textContent = "";
 
     // Skickar POST-anrop till APIet
-    try {
-      await fetch(API_URL, {
+    try{
+      await fetch(API_URL,{
         method: "POST",
-        headers: {
+        headers:{
           "Content-Type": "application/json"
         },
         body: JSON.stringify(newItem)
@@ -97,22 +97,22 @@ function handleForm() {
       form.reset();
       window.location.href = "index.html";
 
-    } catch (err) {
+    } catch (err){
       console.error("Fel vid post:", err);
     }
   });
 }
 
 // Tar bort en arbetserfarenhet baserat på id
-async function deleteItem(id) {
-  try {
-    await fetch(`${API_URL}/${id}`, {
+async function deleteItem(id){
+  try{
+    await fetch(`${API_URL}/${id}`,{
       method: "DELETE"
     });
 
     getWorkExperience();
 
-  } catch (err) {
+  } catch (err){
     console.error("Fel vid delete:", err);
   }
 }
