@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lägg till</title>
+  <link rel="icon" href="/assets/favicon-CXWU9Gyf.png" type="image/png">
+  <script type="module" crossorigin src="/assets/main-BKWyfCEL.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-BDEpwoPk.css">
+</head>
+<body>
+  <header>
+    <nav class="menu">
+      <a href="index.html">Startsida</a>
+      <a href="add.html">Lägg till</a>
+      <a href="about.html">Info</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Lägg till arbetserfarenhet</h1>
+
+    <form id="cvForm">
+        <input type="text" name="companyname" placeholder="Företagsnamn" required>
+        <input type="text" name="jobtitle" placeholder="Jobbtitel" required>
+        <input type="text" name="location" placeholder="Stad" required>
+        <input type="date" name="startdate" required>
+        <input type="date" name="enddate">
+        <textarea name="description" placeholder="Beskrivning" required></textarea>
+        
+        <button type="submit">Lägg till</button>
+
+        <p id="errorMsg" style="color: red;"></p>
+    </form>
+  </main>
+
+
+  <footer>
+    <p> © All rights reserved</p>
+  </footer>
+
+
+</body>
+</html>
