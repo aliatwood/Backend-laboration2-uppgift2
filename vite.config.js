@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path'
 
 export default defineConfig({
+    base: '/Backend-laboration2-uppgift2/',
     build: {
         outDir: 'docs',
         rollupOptions: {
