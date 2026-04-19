@@ -30,6 +30,10 @@ body{
   opacity: 0.75;
 }
 
+.menu a.active {
+  border-bottom: 2px solid white;
+}
+
 h1 {
   text-align: center;
   color: #6ee7b7;

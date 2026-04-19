@@ -116,3 +116,10 @@ async function deleteItem(id) {
     console.error("Fel vid delete:", err);
   }
 }
+
+const links = document.querySelectorAll(".menu a");
+links.forEach(link => {
+  if (link.href === window.location.href) {
+    link.classList.add("active");
+  }
+});
