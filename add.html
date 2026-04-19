@@ -8,14 +8,16 @@
   <link rel="icon" href="src/pictures/favicon.png" type="image/png">
 </head>
 <body>
+  <header>
+    <nav class="menu">
+      <a href="index.html">Startsida</a>
+      <a href="add.html">Lägg till</a>
+      <a href="about.html">Info</a>
+    </nav>
+  </header>
+
   <main>
-    <header>
-      <nav class="menu">
-        <a href="index.html">Startsida</a>
-        <a href="add.html">Lägg till</a>
-        <a href="about.html">Info</a>
-      </nav>
-    </header>
+    <h1>Lägg till arbetserfarenhet</h1>
 
     <form id="cvForm">
         <input type="text" name="companyname" placeholder="Företagsnamn" required>
@@ -26,6 +28,8 @@
         <textarea name="description" placeholder="Beskrivning" required></textarea>
         
         <button type="submit">Lägg till</button>
+
+        <p id="errorMsg" style="color: red;"></p>
     </form>
   </main>
 

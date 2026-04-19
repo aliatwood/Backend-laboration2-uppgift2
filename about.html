@@ -8,21 +8,31 @@
   <link rel="icon" href="src/pictures/favicon.png" type="image/png">
 </head>
 <body>
+  <header>
+    <nav class="menu">
+      <a href="index.html">Startsida</a>
+      <a href="add.html">Lägg till</a>
+      <a href="about.html">Info</a>
+    </nav>
+  </header>
+
   <main>
-    <header>
-      <nav class="menu">
-        <a href="index.html">Startsida</a>
-        <a href="add.html">Lägg till</a>
-        <a href="about.html">Info</a>
-      </nav>
-    </header>
+    <div class="about">
+      <h1>Om webbplatsen</h1>
+      <p>Denna webbplats visar arbetserfarenheter hämtade från ett REST API byggt med Node.js, Express och MariaDB.</p>
+      <p>Du kan se alla erfarenheter på startsidan, lägga till nya via formuläret och ta bort befintliga poster.</p>
+
+      <h2>Databas</h2>
+      <p>Databasservern som används är MySQL/MariaDB, hostad på Railway.</p>
+
+      <h2>Slutsatser</h2>
+      <p>Uppgiften gav en god förståelse för hur REST API:er fungerar och hur man kan kommunicera mellan en frontend och backend via Fetch API. Det var lärorikt att se hur data flödar från databasen till användargränssnittet.</p>
+    </div>
   </main>
 
-
   <footer>
-    <p> © All rights reserved</p>
+    <p>© All rights reserved</p>
   </footer>
-
 
   <script src="src/main.js"></script>
 </body>
